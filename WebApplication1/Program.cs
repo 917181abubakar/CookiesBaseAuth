@@ -22,15 +22,15 @@ builder.Services.AddAuthentication(
         options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
     }
 )
-    .AddIdentityCookies(options =>
+    .AddCookie(options =>
     {
-        //options.Cookie.HttpOnly = true;
-        //options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
-        //options.LoginPath = "/User/login";
-        //options.LogoutPath = "/User/logout";
-        //options.AccessDeniedPath = "/User/AccessDenied";
-        //options.SlidingExpiration = true;
-        
+        options.Cookie.HttpOnly = true;
+        options.ExpireTimeSpan = TimeSpan.FromMinutes(1);
+        options.LoginPath = "/User/login";
+        options.LogoutPath = "/User/logout";
+        options.AccessDeniedPath = "/User/AccessDenied";
+        options.SlidingExpiration = true;
+
     });
 
 
